@@ -1,0 +1,768 @@
+2026-04-07 13:25:57,736 Worker cbfbcbbd592f4b5ba67d4f960322495b: started with PID 34369, version 2.6.1
+2026-04-07 13:25:57,736 Worker cbfbcbbd592f4b5ba67d4f960322495b: subscribing to channel rq:pubsub:cbfbcbbd592f4b5ba67d4f960322495b
+2026-04-07 13:25:57,737 *** Listening on home-cobra-frappe-bench:short, home-cobra-frappe-bench:default, home-cobra-frappe-bench:long...
+2026-04-07 13:25:57,737 Worker cbfbcbbd592f4b5ba67d4f960322495b: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 13:25:57,738 Worker cbfbcbbd592f4b5ba67d4f960322495b: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 13:25:57,739 Worker cbfbcbbd592f4b5ba67d4f960322495b: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 13:26:45,080 Worker cbfbcbbd592f4b5ba67d4f960322495b [PID 34369]: warm shut down requested
+Traceback (most recent call last):
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/connection.py", line 1133, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/_parsers/hiredis.py", line 163, in read_response
+    self.read_from_socket()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/_parsers/hiredis.py", line 110, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cobra/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/cobra/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/cobra/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 353, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/rq/worker.py", line 631, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/rq/worker.py", line 1150, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/rq/worker.py", line 885, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/client.py", line 1687, in execute
+    conn = self.connection_pool.get_connection()
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/connection.py", line 869, in connect_check_health
+    self.on_connect_check_health(check_health=check_health)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/connection.py", line 994, in on_connect_check_health
+    self.read_response()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/connection.py", line 1141, in read_response
+    raise ConnectionError(f"Error while reading from {host_error} : {e.args}")
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000 : (104, 'Connection reset by peer')
+
+Error while reading from 127.0.0.1:11000 : (104, 'Connection reset by peer')
+2026-04-07 13:31:07,507 Worker decdd09e17ab40558687818b8898091e: started with PID 35429, version 2.6.1
+2026-04-07 13:31:07,507 Worker decdd09e17ab40558687818b8898091e: subscribing to channel rq:pubsub:decdd09e17ab40558687818b8898091e
+2026-04-07 13:31:07,508 *** Listening on home-cobra-frappe-bench:short, home-cobra-frappe-bench:default, home-cobra-frappe-bench:long...
+2026-04-07 13:31:07,508 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 13:31:07,509 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 13:31:07,509 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 13:33:14,831 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.create_contact', kwargs={'user': <User: doctype=User umohmcdave@gmail.com>, 'ignore_mandatory': Tru..., method='frappe.core.doctype.user.user.create_contact', site='local.com', user='Administrator') (local.com||a974caf2-4743-4078-b749-718b213c8238)
+2026-04-07 13:33:16,368 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.create_contact', kwargs={'user': <User: doctype=User umohmcdave@gmail.com>, 'ignore_mandatory': Tru..., method='frappe.core.doctype.user.user.create_contact', site='local.com', user='Administrator') job in 0:00:01.469849s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:16,368 home-cobra-frappe-bench:default: Job OK (local.com||a974caf2-4743-4078-b749-718b213c8238)
+2026-04-07 13:33:16,368 Result is kept for 600 seconds
+2026-04-07 13:33:16,380 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.update_gravatar', kwargs={'name': 'umohmcdave@gmail.com'}, method='frappe.core.doctype.user.user.update_gravatar', site='local.com', user='Administrator') (local.com||19754b26-5512-47ae-9267-59a0ec9591c3)
+2026-04-07 13:33:17,012 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.update_gravatar', kwargs={'name': 'umohmcdave@gmail.com'}, method='frappe.core.doctype.user.user.update_gravatar', site='local.com', user='Administrator') job in 0:00:00.626790s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,012 home-cobra-frappe-bench:default: Job OK (local.com||19754b26-5512-47ae-9267-59a0ec9591c3)
+2026-04-07 13:33:17,012 Result is kept for 600 seconds
+2026-04-07 13:33:17,016 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-tax_id-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||198f77e9-99e8-4034-a7d4-9c17cbe0a22f)
+2026-04-07 13:33:17,081 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-tax_id-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.060418s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,081 home-cobra-frappe-bench:default: Job OK (local.com||198f77e9-99e8-4034-a7d4-9c17cbe0a22f)
+2026-04-07 13:33:17,081 Result is kept for 600 seconds
+2026-04-07 13:33:17,084 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-tax_id-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||e22ff80e-5889-4419-a5f6-fd232f7c6b93)
+2026-04-07 13:33:17,117 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-tax_id-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028124s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,117 home-cobra-frappe-bench:default: Job OK (local.com||e22ff80e-5889-4419-a5f6-fd232f7c6b93)
+2026-04-07 13:33:17,117 Result is kept for 600 seconds
+2026-04-07 13:33:17,120 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-tax_id-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||c7d0eb1d-b614-47c6-82fe-2ac67da8837a)
+2026-04-07 13:33:17,153 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-tax_id-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028787s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,153 home-cobra-frappe-bench:default: Job OK (local.com||c7d0eb1d-b614-47c6-82fe-2ac67da8837a)
+2026-04-07 13:33:17,153 Result is kept for 600 seconds
+2026-04-07 13:33:17,156 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-tax_id-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||1e290c1e-4ca1-46c1-a3c2-71ebaffdf143)
+2026-04-07 13:33:17,190 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-tax_id-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029386s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,190 home-cobra-frappe-bench:default: Job OK (local.com||1e290c1e-4ca1-46c1-a3c2-71ebaffdf143)
+2026-04-07 13:33:17,190 Result is kept for 600 seconds
+2026-04-07 13:33:17,193 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-tax_id-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||8dcf2f85-6536-468c-b3b6-0a4746964883)
+2026-04-07 13:33:17,226 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-tax_id-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028693s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,226 home-cobra-frappe-bench:default: Job OK (local.com||8dcf2f85-6536-468c-b3b6-0a4746964883)
+2026-04-07 13:33:17,226 Result is kept for 600 seconds
+2026-04-07 13:33:17,229 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-tax_id-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||8155b214-1983-4c1f-876a-17e4b6aee987)
+2026-04-07 13:33:17,263 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-tax_id-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028908s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,263 home-cobra-frappe-bench:default: Job OK (local.com||8155b214-1983-4c1f-876a-17e4b6aee987)
+2026-04-07 13:33:17,263 Result is kept for 600 seconds
+2026-04-07 13:33:17,266 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Packed Item-rate-read_only'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||c01e7deb-d9ce-4764-a4e1-58e43ed84e14)
+2026-04-07 13:33:17,300 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Packed Item-rate-read_only'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029177s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,300 home-cobra-frappe-bench:default: Job OK (local.com||c01e7deb-d9ce-4764-a4e1-58e43ed84e14)
+2026-04-07 13:33:17,300 Result is kept for 600 seconds
+2026-04-07 13:33:17,303 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice Item-discount_account..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||763eef60-da1c-4ab2-b183-a931b4e9bfdd)
+2026-04-07 13:33:17,338 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice Item-discount_account..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.030006s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,338 home-cobra-frappe-bench:default: Job OK (local.com||763eef60-da1c-4ab2-b183-a931b4e9bfdd)
+2026-04-07 13:33:17,338 Result is kept for 600 seconds
+2026-04-07 13:33:17,341 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice Item-discount_account..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||24175f3a-1555-4b99-af80-c22c0eeb8271)
+2026-04-07 13:33:17,374 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice Item-discount_account..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028706s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,374 home-cobra-frappe-bench:default: Job OK (local.com||24175f3a-1555-4b99-af80-c22c0eeb8271)
+2026-04-07 13:33:17,374 Result is kept for 600 seconds
+2026-04-07 13:33:17,378 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-additional_discount_a..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||99b47726-4f4b-410e-965a-9f7a5b7e892c)
+2026-04-07 13:33:17,410 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-additional_discount_a..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028466s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,411 home-cobra-frappe-bench:default: Job OK (local.com||99b47726-4f4b-410e-965a-9f7a5b7e892c)
+2026-04-07 13:33:17,411 Result is kept for 600 seconds
+2026-04-07 13:33:17,414 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-additional_discount_a..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||797f1cb8-81ae-48b5-80d3-87ebca57eabf)
+2026-04-07 13:33:17,447 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-additional_discount_a..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028544s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,447 home-cobra-frappe-bench:default: Job OK (local.com||797f1cb8-81ae-48b5-80d3-87ebca57eabf)
+2026-04-07 13:33:17,447 Result is kept for 600 seconds
+2026-04-07 13:33:17,450 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier-naming_series-reqd'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||af5940ab-2caf-4f53-a35b-d53703d08e59)
+2026-04-07 13:33:17,482 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier-naming_series-reqd'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028100s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,482 home-cobra-frappe-bench:default: Job OK (local.com||af5940ab-2caf-4f53-a35b-d53703d08e59)
+2026-04-07 13:33:17,482 Result is kept for 600 seconds
+2026-04-07 13:33:17,486 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier-naming_series-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||4156cf21-f4dc-44d0-a886-9946d7ad6af5)
+2026-04-07 13:33:17,518 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier-naming_series-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028456s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,518 home-cobra-frappe-bench:default: Job OK (local.com||4156cf21-f4dc-44d0-a886-9946d7ad6af5)
+2026-04-07 13:33:17,518 Result is kept for 600 seconds
+2026-04-07 13:33:17,522 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Customer-naming_series-reqd'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||1e6a5b66-a722-4d30-a0a7-726f68a5e075)
+2026-04-07 13:33:17,554 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Customer-naming_series-reqd'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028728s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,555 home-cobra-frappe-bench:default: Job OK (local.com||1e6a5b66-a722-4d30-a0a7-726f68a5e075)
+2026-04-07 13:33:17,555 Result is kept for 600 seconds
+2026-04-07 13:33:17,558 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Customer-naming_series-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||efc57e59-4af8-4f3e-a778-f13f1bf5554a)
+2026-04-07 13:33:17,589 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Customer-naming_series-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.026975s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,589 home-cobra-frappe-bench:default: Job OK (local.com||efc57e59-4af8-4f3e-a778-f13f1bf5554a)
+2026-04-07 13:33:17,589 Result is kept for 600 seconds
+2026-04-07 13:33:17,592 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-tax_id-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||36f8af5e-3301-47d3-b0f4-c47c365e9b79)
+2026-04-07 13:33:17,624 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-tax_id-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027292s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,624 home-cobra-frappe-bench:default: Job OK (local.com||36f8af5e-3301-47d3-b0f4-c47c365e9b79)
+2026-04-07 13:33:17,624 Result is kept for 600 seconds
+2026-04-07 13:33:17,627 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-tax_id-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||4289026d-8635-4c49-ab1c-b318dd15faa0)
+2026-04-07 13:33:17,659 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-tax_id-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027850s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,659 home-cobra-frappe-bench:default: Job OK (local.com||4289026d-8635-4c49-ab1c-b318dd15faa0)
+2026-04-07 13:33:17,659 Result is kept for 600 seconds
+2026-04-07 13:33:17,662 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-tax_id-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||b0e32b64-8326-4590-899e-a0b731c519a4)
+2026-04-07 13:33:17,694 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-tax_id-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027420s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,694 home-cobra-frappe-bench:default: Job OK (local.com||b0e32b64-8326-4590-899e-a0b731c519a4)
+2026-04-07 13:33:17,694 Result is kept for 600 seconds
+2026-04-07 13:33:17,697 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-tax_id-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||23f72844-bc3f-455c-8e96-0f3c80980e65)
+2026-04-07 13:33:17,729 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-tax_id-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027702s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,729 home-cobra-frappe-bench:default: Job OK (local.com||23f72844-bc3f-455c-8e96-0f3c80980e65)
+2026-04-07 13:33:17,729 Result is kept for 600 seconds
+2026-04-07 13:33:17,732 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-tax_id-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||7abdd1a4-af40-4b6e-ad4c-006399f9e06f)
+2026-04-07 13:33:17,764 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-tax_id-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027354s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,764 home-cobra-frappe-bench:default: Job OK (local.com||7abdd1a4-af40-4b6e-ad4c-006399f9e06f)
+2026-04-07 13:33:17,764 Result is kept for 600 seconds
+2026-04-07 13:33:17,767 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-tax_id-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||ed9b6c50-2e47-4cf3-a3bd-1dff8d97e55c)
+2026-04-07 13:33:17,799 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-tax_id-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027655s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,799 home-cobra-frappe-bench:default: Job OK (local.com||ed9b6c50-2e47-4cf3-a3bd-1dff8d97e55c)
+2026-04-07 13:33:17,799 Result is kept for 600 seconds
+2026-04-07 13:33:17,803 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Packed Item-rate-read_only'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||796cbb42-5cb9-4802-b661-7e9aa5d31461)
+2026-04-07 13:33:17,834 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Packed Item-rate-read_only'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027156s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,834 home-cobra-frappe-bench:default: Job OK (local.com||796cbb42-5cb9-4802-b661-7e9aa5d31461)
+2026-04-07 13:33:17,834 Result is kept for 600 seconds
+2026-04-07 13:33:17,837 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice Item-discount_account..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||2992dac3-bb1c-4ca1-8552-834e9bd3e0f2)
+2026-04-07 13:33:17,869 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice Item-discount_account..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027212s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,869 home-cobra-frappe-bench:default: Job OK (local.com||2992dac3-bb1c-4ca1-8552-834e9bd3e0f2)
+2026-04-07 13:33:17,869 Result is kept for 600 seconds
+2026-04-07 13:33:17,872 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice Item-discount_account..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||0da60e2e-3b00-46c0-9fc9-d44a9f38f6a5)
+2026-04-07 13:33:17,904 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice Item-discount_account..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027468s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,904 home-cobra-frappe-bench:default: Job OK (local.com||0da60e2e-3b00-46c0-9fc9-d44a9f38f6a5)
+2026-04-07 13:33:17,904 Result is kept for 600 seconds
+2026-04-07 13:33:17,907 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-additional_discount_a..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||8e145505-2125-4c24-a2be-0d26e84fc803)
+2026-04-07 13:33:17,939 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-additional_discount_a..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027863s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,939 home-cobra-frappe-bench:default: Job OK (local.com||8e145505-2125-4c24-a2be-0d26e84fc803)
+2026-04-07 13:33:17,939 Result is kept for 600 seconds
+2026-04-07 13:33:17,943 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-additional_discount_a..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||41d43da0-f2ed-43bf-acc0-b494d318f90c)
+2026-04-07 13:33:17,976 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-additional_discount_a..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028540s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:17,976 home-cobra-frappe-bench:default: Job OK (local.com||41d43da0-f2ed-43bf-acc0-b494d318f90c)
+2026-04-07 13:33:17,976 Result is kept for 600 seconds
+2026-04-07 13:33:17,979 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Quotation-base_rounded_total-hidden..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||b16c968f-607d-4a71-aecb-aef8ddb4e3ad)
+2026-04-07 13:33:18,011 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Quotation-base_rounded_total-hidden..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027718s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,011 home-cobra-frappe-bench:default: Job OK (local.com||b16c968f-607d-4a71-aecb-aef8ddb4e3ad)
+2026-04-07 13:33:18,011 Result is kept for 600 seconds
+2026-04-07 13:33:18,015 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Quotation-base_rounded_total-print_..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||c48c7c6c-6520-4da1-af34-0aed9ad4e4c9)
+2026-04-07 13:33:18,047 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Quotation-base_rounded_total-print_..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027739s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,047 home-cobra-frappe-bench:default: Job OK (local.com||c48c7c6c-6520-4da1-af34-0aed9ad4e4c9)
+2026-04-07 13:33:18,047 Result is kept for 600 seconds
+2026-04-07 13:33:18,050 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Quotation-rounded_total-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||1a5b14cf-d81c-44aa-9650-fa52853dc952)
+2026-04-07 13:33:18,081 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Quotation-rounded_total-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027048s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,081 home-cobra-frappe-bench:default: Job OK (local.com||1a5b14cf-d81c-44aa-9650-fa52853dc952)
+2026-04-07 13:33:18,081 Result is kept for 600 seconds
+2026-04-07 13:33:18,085 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Quotation-rounded_total-print_hide'..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||8f66f763-db3b-4727-9ad3-48514417bf24)
+2026-04-07 13:33:18,117 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Quotation-rounded_total-print_hide'..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027748s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,117 home-cobra-frappe-bench:default: Job OK (local.com||8f66f763-db3b-4727-9ad3-48514417bf24)
+2026-04-07 13:33:18,117 Result is kept for 600 seconds
+2026-04-07 13:33:18,120 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Quotation-disable_rounded_total-def..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||5e93a23f-c4e9-4e47-b554-4eae97b96bbf)
+2026-04-07 13:33:18,152 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Quotation-disable_rounded_total-def..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027444s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,152 home-cobra-frappe-bench:default: Job OK (local.com||5e93a23f-c4e9-4e47-b554-4eae97b96bbf)
+2026-04-07 13:33:18,152 Result is kept for 600 seconds
+2026-04-07 13:33:18,155 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-base_rounded_total-hidd..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||dbcb5701-8beb-46c0-8ef9-3ed97b6f2585)
+2026-04-07 13:33:18,187 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-base_rounded_total-hidd..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027552s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,187 home-cobra-frappe-bench:default: Job OK (local.com||dbcb5701-8beb-46c0-8ef9-3ed97b6f2585)
+2026-04-07 13:33:18,187 Result is kept for 600 seconds
+2026-04-07 13:33:18,191 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-base_rounded_total-prin..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||57e3e5ea-3b0d-4c33-992a-6ade4599cd1a)
+2026-04-07 13:33:18,222 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-base_rounded_total-prin..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027650s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,222 home-cobra-frappe-bench:default: Job OK (local.com||57e3e5ea-3b0d-4c33-992a-6ade4599cd1a)
+2026-04-07 13:33:18,222 Result is kept for 600 seconds
+2026-04-07 13:33:18,226 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-rounded_total-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||bd2299d0-4bae-4102-847f-1d0f7681b92c)
+2026-04-07 13:33:18,258 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-rounded_total-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027918s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,258 home-cobra-frappe-bench:default: Job OK (local.com||bd2299d0-4bae-4102-847f-1d0f7681b92c)
+2026-04-07 13:33:18,258 Result is kept for 600 seconds
+2026-04-07 13:33:18,261 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-rounded_total-print_hid..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||0f4c57a0-6b85-4519-9496-a3afb4b10e3b)
+2026-04-07 13:33:18,293 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-rounded_total-print_hid..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027791s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,293 home-cobra-frappe-bench:default: Job OK (local.com||0f4c57a0-6b85-4519-9496-a3afb4b10e3b)
+2026-04-07 13:33:18,293 Result is kept for 600 seconds
+2026-04-07 13:33:18,297 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-disable_rounded_total-d..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||b7a76bca-51d8-4e62-a2e1-26a90a291827)
+2026-04-07 13:33:18,329 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-disable_rounded_total-d..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.027680s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,329 home-cobra-frappe-bench:default: Job OK (local.com||b7a76bca-51d8-4e62-a2e1-26a90a291827)
+2026-04-07 13:33:18,329 Result is kept for 600 seconds
+2026-04-07 13:33:18,332 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-base_rounded_total-hi..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||99c5f32a-cf09-4e09-bc92-1ca9797d975b)
+2026-04-07 13:33:18,365 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-base_rounded_total-hi..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028707s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,365 home-cobra-frappe-bench:default: Job OK (local.com||99c5f32a-cf09-4e09-bc92-1ca9797d975b)
+2026-04-07 13:33:18,365 Result is kept for 600 seconds
+2026-04-07 13:33:18,368 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-base_rounded_total-pr..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||f179553c-a1a6-48ab-8c69-06d3bb4d9ba0)
+2026-04-07 13:33:18,408 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-base_rounded_total-pr..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.035176s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,408 home-cobra-frappe-bench:default: Job OK (local.com||f179553c-a1a6-48ab-8c69-06d3bb4d9ba0)
+2026-04-07 13:33:18,408 Result is kept for 600 seconds
+2026-04-07 13:33:18,413 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-rounded_total-hidden'..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||6e23e519-3f84-41c6-a907-659cbb4a4f03)
+2026-04-07 13:33:18,449 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-rounded_total-hidden'..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.031770s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,449 home-cobra-frappe-bench:default: Job OK (local.com||6e23e519-3f84-41c6-a907-659cbb4a4f03)
+2026-04-07 13:33:18,449 Result is kept for 600 seconds
+2026-04-07 13:33:18,453 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-rounded_total-print_h..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||e65351ee-8695-4c75-ad5e-402c899db69f)
+2026-04-07 13:33:18,488 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-rounded_total-print_h..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.030002s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,488 home-cobra-frappe-bench:default: Job OK (local.com||e65351ee-8695-4c75-ad5e-402c899db69f)
+2026-04-07 13:33:18,488 Result is kept for 600 seconds
+2026-04-07 13:33:18,492 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-disable_rounded_total..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||637b2e8e-c686-47a0-a92b-d17b2fc8d62c)
+2026-04-07 13:33:18,528 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-disable_rounded_total..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.030988s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,528 home-cobra-frappe-bench:default: Job OK (local.com||637b2e8e-c686-47a0-a92b-d17b2fc8d62c)
+2026-04-07 13:33:18,528 Result is kept for 600 seconds
+2026-04-07 13:33:18,532 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-base_rounded_total-hi..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||d4584ec3-b091-400c-9886-b5dd221de671)
+2026-04-07 13:33:18,567 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-base_rounded_total-hi..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029563s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,567 home-cobra-frappe-bench:default: Job OK (local.com||d4584ec3-b091-400c-9886-b5dd221de671)
+2026-04-07 13:33:18,567 Result is kept for 600 seconds
+2026-04-07 13:33:18,570 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-base_rounded_total-pr..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||e5e07976-189b-4ca2-b6c6-e542510d478f)
+2026-04-07 13:33:18,606 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-base_rounded_total-pr..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.030875s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,606 home-cobra-frappe-bench:default: Job OK (local.com||e5e07976-189b-4ca2-b6c6-e542510d478f)
+2026-04-07 13:33:18,606 Result is kept for 600 seconds
+2026-04-07 13:33:18,610 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-rounded_total-hidden'..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||0e86a715-6000-4e0f-b57b-e26f542faf97)
+2026-04-07 13:33:18,646 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-rounded_total-hidden'..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.031214s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,647 home-cobra-frappe-bench:default: Job OK (local.com||0e86a715-6000-4e0f-b57b-e26f542faf97)
+2026-04-07 13:33:18,647 Result is kept for 600 seconds
+2026-04-07 13:33:18,651 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-rounded_total-print_h..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||54a079a8-98b8-4c61-abef-fd30a280bac1)
+2026-04-07 13:33:18,684 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-rounded_total-print_h..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028625s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,685 home-cobra-frappe-bench:default: Job OK (local.com||54a079a8-98b8-4c61-abef-fd30a280bac1)
+2026-04-07 13:33:18,685 Result is kept for 600 seconds
+2026-04-07 13:33:18,689 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-disable_rounded_total..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||f5981efb-d2d9-45d5-ab92-2cd0383f1f9e)
+2026-04-07 13:33:18,723 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-disable_rounded_total..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029185s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,723 home-cobra-frappe-bench:default: Job OK (local.com||f5981efb-d2d9-45d5-ab92-2cd0383f1f9e)
+2026-04-07 13:33:18,723 Result is kept for 600 seconds
+2026-04-07 13:33:18,726 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier Quotation-base_rounded_tot..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||52a54dab-e848-4151-a7c0-1b147a7eac33)
+2026-04-07 13:33:18,760 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier Quotation-base_rounded_tot..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029278s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,760 home-cobra-frappe-bench:default: Job OK (local.com||52a54dab-e848-4151-a7c0-1b147a7eac33)
+2026-04-07 13:33:18,760 Result is kept for 600 seconds
+2026-04-07 13:33:18,764 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier Quotation-base_rounded_tot..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||c8898468-78b1-496f-98eb-34466fd860d2)
+2026-04-07 13:33:18,798 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier Quotation-base_rounded_tot..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029390s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,798 home-cobra-frappe-bench:default: Job OK (local.com||c8898468-78b1-496f-98eb-34466fd860d2)
+2026-04-07 13:33:18,798 Result is kept for 600 seconds
+2026-04-07 13:33:18,802 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier Quotation-rounded_total-hi..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||1e61f7e6-3745-4002-a586-bf699b00b531)
+2026-04-07 13:33:18,837 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier Quotation-rounded_total-hi..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.030193s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,837 home-cobra-frappe-bench:default: Job OK (local.com||1e61f7e6-3745-4002-a586-bf699b00b531)
+2026-04-07 13:33:18,837 Result is kept for 600 seconds
+2026-04-07 13:33:18,840 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier Quotation-rounded_total-pr..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||f22e5bbd-8ba8-4270-b1da-90e0b0a1d7a6)
+2026-04-07 13:33:18,874 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier Quotation-rounded_total-pr..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029244s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,875 home-cobra-frappe-bench:default: Job OK (local.com||f22e5bbd-8ba8-4270-b1da-90e0b0a1d7a6)
+2026-04-07 13:33:18,875 Result is kept for 600 seconds
+2026-04-07 13:33:18,878 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier Quotation-disable_rounded_..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||aa7eb3a5-7f78-4c99-9839-3c0567f9bd3a)
+2026-04-07 13:33:18,912 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier Quotation-disable_rounded_..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029226s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,912 home-cobra-frappe-bench:default: Job OK (local.com||aa7eb3a5-7f78-4c99-9839-3c0567f9bd3a)
+2026-04-07 13:33:18,912 Result is kept for 600 seconds
+2026-04-07 13:33:18,916 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Order-base_rounded_total-h..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||7f2b6cb0-93a4-4e78-bddd-82844910bf4e)
+2026-04-07 13:33:18,949 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Order-base_rounded_total-h..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028841s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,949 home-cobra-frappe-bench:default: Job OK (local.com||7f2b6cb0-93a4-4e78-bddd-82844910bf4e)
+2026-04-07 13:33:18,949 Result is kept for 600 seconds
+2026-04-07 13:33:18,953 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Order-base_rounded_total-p..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||3ad3da66-ec84-4a5d-996e-89c34bf84854)
+2026-04-07 13:33:18,988 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Order-base_rounded_total-p..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.030368s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:18,988 home-cobra-frappe-bench:default: Job OK (local.com||3ad3da66-ec84-4a5d-996e-89c34bf84854)
+2026-04-07 13:33:18,988 Result is kept for 600 seconds
+2026-04-07 13:33:18,992 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Order-rounded_total-hidden..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||55ba1073-8cad-4843-8e04-328a84f6541f)
+2026-04-07 13:33:19,027 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Order-rounded_total-hidden..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.030106s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,027 home-cobra-frappe-bench:default: Job OK (local.com||55ba1073-8cad-4843-8e04-328a84f6541f)
+2026-04-07 13:33:19,027 Result is kept for 600 seconds
+2026-04-07 13:33:19,031 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Order-rounded_total-print_..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||634c03e5-3fff-447c-83d5-fd15aed6b3ef)
+2026-04-07 13:33:19,067 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Order-rounded_total-print_..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.031798s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,067 home-cobra-frappe-bench:default: Job OK (local.com||634c03e5-3fff-447c-83d5-fd15aed6b3ef)
+2026-04-07 13:33:19,067 Result is kept for 600 seconds
+2026-04-07 13:33:19,071 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Order-disable_rounded_tota..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||86a3b037-3f5e-4aa2-818e-3561404ba5eb)
+2026-04-07 13:33:19,106 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Order-disable_rounded_tota..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029776s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,106 home-cobra-frappe-bench:default: Job OK (local.com||86a3b037-3f5e-4aa2-818e-3561404ba5eb)
+2026-04-07 13:33:19,106 Result is kept for 600 seconds
+2026-04-07 13:33:19,110 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice-base_rounded_total..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||85f20a2d-2906-4038-b1af-5f03788420bd)
+2026-04-07 13:33:19,148 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice-base_rounded_total..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.033849s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,148 home-cobra-frappe-bench:default: Job OK (local.com||85f20a2d-2906-4038-b1af-5f03788420bd)
+2026-04-07 13:33:19,148 Result is kept for 600 seconds
+2026-04-07 13:33:19,152 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice-base_rounded_total..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||a5e0c848-f13d-4d88-b9b4-770f5ba41545)
+2026-04-07 13:33:19,187 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice-base_rounded_total..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029528s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,187 home-cobra-frappe-bench:default: Job OK (local.com||a5e0c848-f13d-4d88-b9b4-770f5ba41545)
+2026-04-07 13:33:19,187 Result is kept for 600 seconds
+2026-04-07 13:33:19,191 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice-rounded_total-hidd..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||52f452b4-ca42-410e-aebf-623bfaeaf040)
+2026-04-07 13:33:19,229 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice-rounded_total-hidd..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.033709s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,229 home-cobra-frappe-bench:default: Job OK (local.com||52f452b4-ca42-410e-aebf-623bfaeaf040)
+2026-04-07 13:33:19,229 Result is kept for 600 seconds
+2026-04-07 13:33:19,233 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice-rounded_total-prin..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||8512fc82-a740-43ec-90f1-85380066a715)
+2026-04-07 13:33:19,267 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice-rounded_total-prin..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029021s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,267 home-cobra-frappe-bench:default: Job OK (local.com||8512fc82-a740-43ec-90f1-85380066a715)
+2026-04-07 13:33:19,267 Result is kept for 600 seconds
+2026-04-07 13:33:19,271 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice-disable_rounded_to..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||6ee9d035-b795-433d-80b2-c92f63a1f36e)
+2026-04-07 13:33:19,305 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice-disable_rounded_to..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029760s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,306 home-cobra-frappe-bench:default: Job OK (local.com||6ee9d035-b795-433d-80b2-c92f63a1f36e)
+2026-04-07 13:33:19,306 Result is kept for 600 seconds
+2026-04-07 13:33:19,309 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt-base_rounded_total..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||cc24ad35-ed1b-4622-b65f-459ab6121c73)
+2026-04-07 13:33:19,343 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt-base_rounded_total..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029795s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,344 home-cobra-frappe-bench:default: Job OK (local.com||cc24ad35-ed1b-4622-b65f-459ab6121c73)
+2026-04-07 13:33:19,344 Result is kept for 600 seconds
+2026-04-07 13:33:19,347 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt-base_rounded_total..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||fd0b816d-228e-4955-86e7-9eec1260550b)
+2026-04-07 13:33:19,385 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt-base_rounded_total..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.032538s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,385 home-cobra-frappe-bench:default: Job OK (local.com||fd0b816d-228e-4955-86e7-9eec1260550b)
+2026-04-07 13:33:19,385 Result is kept for 600 seconds
+2026-04-07 13:33:19,389 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt-rounded_total-hidd..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||2517262c-6945-4b29-8953-e1a479df49de)
+2026-04-07 13:33:19,424 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt-rounded_total-hidd..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.030252s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,424 home-cobra-frappe-bench:default: Job OK (local.com||2517262c-6945-4b29-8953-e1a479df49de)
+2026-04-07 13:33:19,424 Result is kept for 600 seconds
+2026-04-07 13:33:19,428 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt-rounded_total-prin..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||b8d3e572-bc86-4190-ba45-c50274ebf7d5)
+2026-04-07 13:33:19,469 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt-rounded_total-prin..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.036113s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,469 home-cobra-frappe-bench:default: Job OK (local.com||b8d3e572-bc86-4190-ba45-c50274ebf7d5)
+2026-04-07 13:33:19,469 Result is kept for 600 seconds
+2026-04-07 13:33:19,473 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt-disable_rounded_to..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||f5decb0e-c40f-41d7-b7ed-68443673ab2e)
+2026-04-07 13:33:19,507 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt-disable_rounded_to..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029770s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,507 home-cobra-frappe-bench:default: Job OK (local.com||f5decb0e-c40f-41d7-b7ed-68443673ab2e)
+2026-04-07 13:33:19,507 Result is kept for 600 seconds
+2026-04-07 13:33:19,510 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Quotation-in_words-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||024b63ec-5fcd-460f-a406-57ce177902ed)
+2026-04-07 13:33:19,546 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Quotation-in_words-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.030483s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,546 home-cobra-frappe-bench:default: Job OK (local.com||024b63ec-5fcd-460f-a406-57ce177902ed)
+2026-04-07 13:33:19,546 Result is kept for 600 seconds
+2026-04-07 13:33:19,551 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Quotation-in_words-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||f5674c97-c541-4730-8ae9-87e479c8e389)
+2026-04-07 13:33:19,586 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Quotation-in_words-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.030572s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,587 home-cobra-frappe-bench:default: Job OK (local.com||f5674c97-c541-4730-8ae9-87e479c8e389)
+2026-04-07 13:33:19,587 Result is kept for 600 seconds
+2026-04-07 13:33:19,591 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-in_words-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||30651b72-bf4b-46e5-9610-1cc84e0feb24)
+2026-04-07 13:33:19,626 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-in_words-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.030605s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,626 home-cobra-frappe-bench:default: Job OK (local.com||30651b72-bf4b-46e5-9610-1cc84e0feb24)
+2026-04-07 13:33:19,626 Result is kept for 600 seconds
+2026-04-07 13:33:19,630 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-in_words-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||9538b7dd-2f8f-462e-a048-282f8febc25d)
+2026-04-07 13:33:19,664 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Order-in_words-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029811s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,664 home-cobra-frappe-bench:default: Job OK (local.com||9538b7dd-2f8f-462e-a048-282f8febc25d)
+2026-04-07 13:33:19,664 Result is kept for 600 seconds
+2026-04-07 13:33:19,668 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-in_words-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||0c898eff-7671-44c4-a843-4ff7d7c452d6)
+2026-04-07 13:33:19,706 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-in_words-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.032954s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,706 home-cobra-frappe-bench:default: Job OK (local.com||0c898eff-7671-44c4-a843-4ff7d7c452d6)
+2026-04-07 13:33:19,706 Result is kept for 600 seconds
+2026-04-07 13:33:19,710 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-in_words-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||c922c9d2-c4be-42d3-a7f1-8e1fe8d4bf5c)
+2026-04-07 13:33:19,750 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice-in_words-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.035310s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,750 home-cobra-frappe-bench:default: Job OK (local.com||c922c9d2-c4be-42d3-a7f1-8e1fe8d4bf5c)
+2026-04-07 13:33:19,750 Result is kept for 600 seconds
+2026-04-07 13:33:19,755 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-in_words-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||5c1e9989-d2be-4548-9cad-2b89b18b436c)
+2026-04-07 13:33:19,793 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-in_words-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.032843s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,793 home-cobra-frappe-bench:default: Job OK (local.com||5c1e9989-d2be-4548-9cad-2b89b18b436c)
+2026-04-07 13:33:19,793 Result is kept for 600 seconds
+2026-04-07 13:33:19,797 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-in_words-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||20381c69-2592-433e-81a8-139945362d4c)
+2026-04-07 13:33:19,833 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note-in_words-print_hide'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.030838s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,833 home-cobra-frappe-bench:default: Job OK (local.com||20381c69-2592-433e-81a8-139945362d4c)
+2026-04-07 13:33:19,833 Result is kept for 600 seconds
+2026-04-07 13:33:19,836 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier Quotation-in_words-hidden'..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||5b61d413-9e20-41ad-9611-0c028607ed6d)
+2026-04-07 13:33:19,871 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier Quotation-in_words-hidden'..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029765s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,871 home-cobra-frappe-bench:default: Job OK (local.com||5b61d413-9e20-41ad-9611-0c028607ed6d)
+2026-04-07 13:33:19,871 Result is kept for 600 seconds
+2026-04-07 13:33:19,875 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier Quotation-in_words-print_h..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||08091bda-f6b6-486c-bdc8-29a5881514df)
+2026-04-07 13:33:19,909 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Supplier Quotation-in_words-print_h..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029166s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,909 home-cobra-frappe-bench:default: Job OK (local.com||08091bda-f6b6-486c-bdc8-29a5881514df)
+2026-04-07 13:33:19,909 Result is kept for 600 seconds
+2026-04-07 13:33:19,912 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Order-in_words-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||9a8e7301-5db1-43ab-9181-4b795fd5c3e5)
+2026-04-07 13:33:19,947 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Order-in_words-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029520s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,947 home-cobra-frappe-bench:default: Job OK (local.com||9a8e7301-5db1-43ab-9181-4b795fd5c3e5)
+2026-04-07 13:33:19,947 Result is kept for 600 seconds
+2026-04-07 13:33:19,950 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='local.com', user='umohmcdave@gmail.com') (local.com||6a2b64b5-81aa-4daa-8fe9-1ff3f0f33627)
+2026-04-07 13:33:19,969 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='local.com', user='umohmcdave@gmail.com') job in 0:00:00.014000s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:19,969 home-cobra-frappe-bench:default: Job OK (local.com||6a2b64b5-81aa-4daa-8fe9-1ff3f0f33627)
+2026-04-07 13:33:19,969 Result is kept for 600 seconds
+2026-04-07 13:33:19,972 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Order-in_words-print_hide'..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||76795a83-5613-490f-83f0-3b9fd12b40f3)
+2026-04-07 13:33:20,006 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Order-in_words-print_hide'..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.028758s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:20,006 home-cobra-frappe-bench:default: Job OK (local.com||76795a83-5613-490f-83f0-3b9fd12b40f3)
+2026-04-07 13:33:20,006 Result is kept for 600 seconds
+2026-04-07 13:33:20,010 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice-in_words-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||9b04c7bf-52ca-463e-89cb-f083be162aa6)
+2026-04-07 13:33:20,048 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice-in_words-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.032162s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:20,048 home-cobra-frappe-bench:default: Job OK (local.com||9b04c7bf-52ca-463e-89cb-f083be162aa6)
+2026-04-07 13:33:20,048 Result is kept for 600 seconds
+2026-04-07 13:33:20,052 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice-in_words-print_hid..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||0050f265-2201-4edb-9198-a6dcdfc4cb1c)
+2026-04-07 13:33:20,093 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice-in_words-print_hid..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.035716s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:20,093 home-cobra-frappe-bench:default: Job OK (local.com||0050f265-2201-4edb-9198-a6dcdfc4cb1c)
+2026-04-07 13:33:20,093 Result is kept for 600 seconds
+2026-04-07 13:33:20,097 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt-in_words-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||5a10a179-f92e-4ac5-8edc-dd3d0576e467)
+2026-04-07 13:33:20,131 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt-in_words-hidden'}, method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029777s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:20,131 home-cobra-frappe-bench:default: Job OK (local.com||5a10a179-f92e-4ac5-8edc-dd3d0576e467)
+2026-04-07 13:33:20,131 Result is kept for 600 seconds
+2026-04-07 13:33:20,135 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt-in_words-print_hid..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||0980e53e-2132-4aab-b1ef-2b9589f3b9f6)
+2026-04-07 13:33:20,170 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt-in_words-print_hid..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.030099s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:20,170 home-cobra-frappe-bench:default: Job OK (local.com||0980e53e-2132-4aab-b1ef-2b9589f3b9f6)
+2026-04-07 13:33:20,170 Result is kept for 600 seconds
+2026-04-07 13:33:20,174 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice Item-target_warehouse..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||268701ca-f52c-4d09-8150-cadeb6c8f501)
+2026-04-07 13:33:20,208 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Sales Invoice Item-target_warehouse..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.030038s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:20,209 home-cobra-frappe-bench:default: Job OK (local.com||268701ca-f52c-4d09-8150-cadeb6c8f501)
+2026-04-07 13:33:20,209 Result is kept for 600 seconds
+2026-04-07 13:33:20,212 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note Item-target_warehouse..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||64475726-5d3f-41ff-8caf-af52d02dd8cb)
+2026-04-07 13:33:20,247 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Delivery Note Item-target_warehouse..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029862s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:20,247 home-cobra-frappe-bench:default: Job OK (local.com||64475726-5d3f-41ff-8caf-af52d02dd8cb)
+2026-04-07 13:33:20,247 Result is kept for 600 seconds
+2026-04-07 13:33:20,251 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice Item-from_warehous..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||b0773077-a40a-4b51-af84-6485a3f9a269)
+2026-04-07 13:33:20,288 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Invoice Item-from_warehous..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.032096s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:20,289 home-cobra-frappe-bench:default: Job OK (local.com||b0773077-a40a-4b51-af84-6485a3f9a269)
+2026-04-07 13:33:20,289 Result is kept for 600 seconds
+2026-04-07 13:33:20,292 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt Item-from_warehous..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') (local.com||005569ed-f753-4b87-a22c-a839c662a11c)
+2026-04-07 13:33:20,327 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Property Setter', 'name': 'Purchase Receipt Item-from_warehous..., method='frappe.model.delete_doc.delete_dynamic_links', site='local.com', user='Administrator') job in 0:00:00.029119s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 13:33:20,327 home-cobra-frappe-bench:default: Job OK (local.com||005569ed-f753-4b87-a22c-a839c662a11c)
+2026-04-07 13:33:20,327 Result is kept for 600 seconds
+2026-04-07 13:46:50,389 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 13:46:50,390 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 13:46:50,390 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 14:00:20,505 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 14:00:20,506 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 14:00:20,506 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 14:13:50,704 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 14:13:50,705 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 14:13:50,705 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 14:27:20,882 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 14:27:20,883 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 14:27:20,884 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 14:40:51,043 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 14:40:51,044 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 14:40:51,045 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 14:54:21,203 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 14:54:21,203 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 14:54:21,204 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 15:07:51,368 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 15:07:51,369 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 15:07:51,369 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 15:21:21,454 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 15:21:21,455 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 15:21:21,456 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 15:34:51,508 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 15:34:51,508 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 15:34:51,509 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 15:48:21,572 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 15:48:21,572 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 15:48:21,573 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 16:01:51,754 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 16:01:51,754 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 16:01:51,755 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 16:15:21,828 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 16:15:21,829 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 16:15:21,830 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 16:23:55,790 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='local.com', user='umohmcdave@gmail.com') (local.com||394998b7-d32d-4d2d-81e0-9323020e001d)
+2026-04-07 16:23:55,812 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='local.com', user='umohmcdave@gmail.com') job in 0:00:00.016767s on worker decdd09e17ab40558687818b8898091e
+2026-04-07 16:23:55,813 home-cobra-frappe-bench:default: Job OK (local.com||394998b7-d32d-4d2d-81e0-9323020e001d)
+2026-04-07 16:23:55,813 Result is kept for 600 seconds
+2026-04-07 16:30:40,819 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 16:30:40,822 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 16:30:40,822 Worker decdd09e17ab40558687818b8898091e: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 16:41:47,972 Worker decdd09e17ab40558687818b8898091e [PID 35429]: warm shut down requested
+2026-04-07 16:41:47,974 Worker decdd09e17ab40558687818b8898091e: unsubscribing from channel rq:pubsub:decdd09e17ab40558687818b8898091e
+2026-04-07 17:29:52,966 Worker 290222c8e3514f2b8721254a130984f4: started with PID 26620, version 2.6.1
+2026-04-07 17:29:52,966 Worker 290222c8e3514f2b8721254a130984f4: subscribing to channel rq:pubsub:290222c8e3514f2b8721254a130984f4
+2026-04-07 17:29:52,967 *** Listening on home-cobra-frappe-bench:short, home-cobra-frappe-bench:default, home-cobra-frappe-bench:long...
+2026-04-07 17:29:52,967 Worker 290222c8e3514f2b8721254a130984f4: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 17:29:52,968 Worker 290222c8e3514f2b8721254a130984f4: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 17:29:52,968 Worker 290222c8e3514f2b8721254a130984f4: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 17:40:39,323 Worker 290222c8e3514f2b8721254a130984f4 [PID 26620]: warm shut down requested
+2026-04-07 17:40:39,325 Worker 290222c8e3514f2b8721254a130984f4: unsubscribing from channel rq:pubsub:290222c8e3514f2b8721254a130984f4
+2026-04-07 17:40:43,644 Worker 4b92a1761dfd47a8842878842688d151: started with PID 29611, version 2.6.1
+2026-04-07 17:40:43,645 Worker 4b92a1761dfd47a8842878842688d151: subscribing to channel rq:pubsub:4b92a1761dfd47a8842878842688d151
+2026-04-07 17:40:43,645 *** Listening on home-cobra-frappe-bench:short, home-cobra-frappe-bench:default, home-cobra-frappe-bench:long...
+2026-04-07 17:40:43,646 Worker 4b92a1761dfd47a8842878842688d151: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 17:40:43,647 Worker 4b92a1761dfd47a8842878842688d151: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 17:40:43,648 Worker 4b92a1761dfd47a8842878842688d151: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 17:43:13,089 Worker 4b92a1761dfd47a8842878842688d151 [PID 29611]: warm shut down requested
+2026-04-07 17:43:13,091 Worker 4b92a1761dfd47a8842878842688d151: unsubscribing from channel rq:pubsub:4b92a1761dfd47a8842878842688d151
+2026-04-07 17:43:16,304 Worker 937aef80a93a41789c6282793b9e0284: started with PID 30681, version 2.6.1
+2026-04-07 17:43:16,304 Worker 937aef80a93a41789c6282793b9e0284: subscribing to channel rq:pubsub:937aef80a93a41789c6282793b9e0284
+2026-04-07 17:43:16,305 *** Listening on home-cobra-frappe-bench:short, home-cobra-frappe-bench:default, home-cobra-frappe-bench:long...
+2026-04-07 17:43:16,305 Worker 937aef80a93a41789c6282793b9e0284: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 17:43:16,306 Worker 937aef80a93a41789c6282793b9e0284: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 17:43:16,307 Worker 937aef80a93a41789c6282793b9e0284: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 17:45:58,743 Worker 937aef80a93a41789c6282793b9e0284 [PID 30681]: warm shut down requested
+2026-04-07 17:45:58,744 Worker 937aef80a93a41789c6282793b9e0284: unsubscribing from channel rq:pubsub:937aef80a93a41789c6282793b9e0284
+2026-04-07 17:46:02,228 Worker 0e7d7e5558e74e6eb64d9ca7886766f3: started with PID 31794, version 2.6.1
+2026-04-07 17:46:02,229 Worker 0e7d7e5558e74e6eb64d9ca7886766f3: subscribing to channel rq:pubsub:0e7d7e5558e74e6eb64d9ca7886766f3
+2026-04-07 17:46:02,230 *** Listening on home-cobra-frappe-bench:short, home-cobra-frappe-bench:default, home-cobra-frappe-bench:long...
+2026-04-07 17:46:02,231 Worker 0e7d7e5558e74e6eb64d9ca7886766f3: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 17:46:02,232 Worker 0e7d7e5558e74e6eb64d9ca7886766f3: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 17:46:02,233 Worker 0e7d7e5558e74e6eb64d9ca7886766f3: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 17:47:40,808 Worker 0e7d7e5558e74e6eb64d9ca7886766f3 [PID 31794]: warm shut down requested
+2026-04-07 17:47:40,817 Worker 0e7d7e5558e74e6eb64d9ca7886766f3: unsubscribing from channel rq:pubsub:0e7d7e5558e74e6eb64d9ca7886766f3
+2026-04-07 17:47:43,903 Worker 84e83426e6d841f28e717dfb64b1d5ce: started with PID 32517, version 2.6.1
+2026-04-07 17:47:43,904 Worker 84e83426e6d841f28e717dfb64b1d5ce: subscribing to channel rq:pubsub:84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 17:47:43,904 *** Listening on home-cobra-frappe-bench:short, home-cobra-frappe-bench:default, home-cobra-frappe-bench:long...
+2026-04-07 17:47:43,905 Worker 84e83426e6d841f28e717dfb64b1d5ce: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 17:47:43,905 Worker 84e83426e6d841f28e717dfb64b1d5ce: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 17:47:43,906 Worker 84e83426e6d841f28e717dfb64b1d5ce: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 17:50:47,485 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.create_contact', kwargs={'user': <User: doctype=User umohmcdave@gmail.com>, 'ignore_mandatory': Tru..., method='frappe.core.doctype.user.user.create_contact', site='irfan.cabs', user='Administrator') (irfan.cabs||0046ba6e-c6d0-4df8-b60c-98cfcd1d00ae)
+2026-04-07 17:50:48,863 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.create_contact', kwargs={'user': <User: doctype=User umohmcdave@gmail.com>, 'ignore_mandatory': Tru..., method='frappe.core.doctype.user.user.create_contact', site='irfan.cabs', user='Administrator') job in 0:00:01.305985s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 17:50:48,863 home-cobra-frappe-bench:default: Job OK (irfan.cabs||0046ba6e-c6d0-4df8-b60c-98cfcd1d00ae)
+2026-04-07 17:50:48,863 Result is kept for 600 seconds
+2026-04-07 17:50:48,869 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.update_gravatar', kwargs={'name': 'umohmcdave@gmail.com'}, method='frappe.core.doctype.user.user.update_gravatar', site='irfan.cabs', user='Administrator') (irfan.cabs||2b8a35e6-664d-418d-b8c6-22ef33b0b672)
+2026-04-07 17:50:49,263 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.update_gravatar', kwargs={'name': 'umohmcdave@gmail.com'}, method='frappe.core.doctype.user.user.update_gravatar', site='irfan.cabs', user='Administrator') job in 0:00:00.388955s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 17:50:49,263 home-cobra-frappe-bench:default: Job OK (irfan.cabs||2b8a35e6-664d-418d-b8c6-22ef33b0b672)
+2026-04-07 17:50:49,263 Result is kept for 600 seconds
+2026-04-07 17:50:50,521 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='irfan.cabs', user='umohmcdave@gmail.com') (irfan.cabs||e2e6c420-3f2b-411b-ab3e-93cee40baebf)
+2026-04-07 17:50:50,544 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='irfan.cabs', user='umohmcdave@gmail.com') job in 0:00:00.016490s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 17:50:50,545 home-cobra-frappe-bench:default: Job OK (irfan.cabs||e2e6c420-3f2b-411b-ab3e-93cee40baebf)
+2026-04-07 17:50:50,545 Result is kept for 600 seconds
+2026-04-07 17:54:28,105 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='irfan.cabs', user='umohmcdave@gmail.com') (irfan.cabs||785a0909-bd4f-4dbc-bf14-f5e273e76a66)
+2026-04-07 17:54:28,131 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='irfan.cabs', user='umohmcdave@gmail.com') job in 0:00:00.018235s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 17:54:28,131 home-cobra-frappe-bench:default: Job OK (irfan.cabs||785a0909-bd4f-4dbc-bf14-f5e273e76a66)
+2026-04-07 17:54:28,131 Result is kept for 600 seconds
+2026-04-07 17:54:35,293 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='irfan.cabs', user='umohmcdave@gmail.com') (irfan.cabs||f5c27051-0631-4ef8-a6c0-ffba4cfa882c)
+2026-04-07 17:54:35,326 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='irfan.cabs', user='umohmcdave@gmail.com') job in 0:00:00.024785s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 17:54:35,326 home-cobra-frappe-bench:default: Job OK (irfan.cabs||f5c27051-0631-4ef8-a6c0-ffba4cfa882c)
+2026-04-07 17:54:35,326 Result is kept for 600 seconds
+2026-04-07 17:54:35,377 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='irfan.cabs', user='umohmcdave@gmail.com') (irfan.cabs||eeed7ff0-cce8-406d-9974-aa9899f093cc)
+2026-04-07 17:54:35,408 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='irfan.cabs', user='umohmcdave@gmail.com') job in 0:00:00.023031s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 17:54:35,408 home-cobra-frappe-bench:default: Job OK (irfan.cabs||eeed7ff0-cce8-406d-9974-aa9899f093cc)
+2026-04-07 17:54:35,408 Result is kept for 600 seconds
+2026-04-07 17:54:35,415 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='irfan.cabs', user='umohmcdave@gmail.com') (irfan.cabs||fd9c2798-8b04-407c-8a1d-3fec4e6eb577)
+2026-04-07 17:54:35,448 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='irfan.cabs', user='umohmcdave@gmail.com') job in 0:00:00.023541s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 17:54:35,449 home-cobra-frappe-bench:default: Job OK (irfan.cabs||fd9c2798-8b04-407c-8a1d-3fec4e6eb577)
+2026-04-07 17:54:35,449 Result is kept for 600 seconds
+2026-04-07 17:55:03,173 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='irfan.cabs', user='umohmcdave@gmail.com') (irfan.cabs||d0bea7de-9d00-425f-9e24-1b23f3ecea0f)
+2026-04-07 17:55:03,199 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='irfan.cabs', user='umohmcdave@gmail.com') job in 0:00:00.019723s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 17:55:03,200 home-cobra-frappe-bench:default: Job OK (irfan.cabs||d0bea7de-9d00-425f-9e24-1b23f3ecea0f)
+2026-04-07 17:55:03,200 Result is kept for 600 seconds
+2026-04-07 17:58:29,228 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.create_contact', kwargs={'user': <User: doctype=User umohmcdave@gmail.com>, 'ignore_mandatory': Tru..., method='frappe.core.doctype.user.user.create_contact', site='irfan.cabs', user='umohmcdave@gmail.com') (irfan.cabs||ee77f5aa-28cc-4f9d-8139-d177a84115e0)
+2026-04-07 17:58:30,152 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.create_contact', kwargs={'user': <User: doctype=User umohmcdave@gmail.com>, 'ignore_mandatory': Tru..., method='frappe.core.doctype.user.user.create_contact', site='irfan.cabs', user='umohmcdave@gmail.com') job in 0:00:00.870933s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 17:58:30,152 home-cobra-frappe-bench:default: Job OK (irfan.cabs||ee77f5aa-28cc-4f9d-8139-d177a84115e0)
+2026-04-07 17:58:30,152 Result is kept for 600 seconds
+2026-04-07 17:58:30,160 Worker 84e83426e6d841f28e717dfb64b1d5ce: cleaning registries for queue: home-cobra-frappe-bench:short
+2026-04-07 17:58:30,161 Worker 84e83426e6d841f28e717dfb64b1d5ce: cleaning registries for queue: home-cobra-frappe-bench:default
+2026-04-07 17:58:30,161 Worker 84e83426e6d841f28e717dfb64b1d5ce: cleaning registries for queue: home-cobra-frappe-bench:long
+2026-04-07 17:59:51,991 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='irfan.cabs', user='umohmcdave@gmail.com') (irfan.cabs||2d41cc26-fd75-4bdd-b2b8-eb56a13de733)
+2026-04-07 17:59:52,014 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.ping', kwargs={}, method='frappe.ping', site='irfan.cabs', user='umohmcdave@gmail.com') job in 0:00:00.018318s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 17:59:52,015 home-cobra-frappe-bench:default: Job OK (irfan.cabs||2d41cc26-fd75-4bdd-b2b8-eb56a13de733)
+2026-04-07 17:59:52,015 Result is kept for 600 seconds
+2026-04-07 18:00:00,587 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.monitor.flush', 'scheduled_job_type': 'cumdmuu656'}, method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumdmuu656)
+2026-04-07 18:00:00,808 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.monitor.flush', 'scheduled_job_type': 'cumdmuu656'}, method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.213399s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:00,808 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumdmuu656)
+2026-04-07 18:00:00,808 Result is kept for 600 seconds
+2026-04-07 18:00:00,813 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.retry_sending_emails', 'scheduled_job_type..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumudmhvrg)
+2026-04-07 18:00:01,000 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.retry_sending_emails', 'scheduled_job_type..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.181398s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:01,001 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumudmhvrg)
+2026-04-07 18:00:01,001 Result is kept for 600 seconds
+2026-04-07 18:00:01,006 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.email_account.email_account.notify_unrep..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cum2r1pt3j)
+2026-04-07 18:00:01,221 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.email_account.email_account.notify_unrep..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.208161s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:01,221 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cum2r1pt3j)
+2026-04-07 18:00:01,221 Result is kept for 600 seconds
+2026-04-07 18:00:01,227 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.deferred_insert.save_to_db', 'scheduled_job_type': 'cu..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumdtmt4k5)
+2026-04-07 18:00:01,422 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.deferred_insert.save_to_db', 'scheduled_job_type': 'cu..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.188943s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:01,422 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumdtmt4k5)
+2026-04-07 18:00:01,422 Result is kept for 600 seconds
+2026-04-07 18:00:01,428 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.integrations.doctype.google_calendar.google_calendar.s..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumck2l7b6)
+2026-04-07 18:00:01,848 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.integrations.doctype.google_calendar.google_calendar.s..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.414092s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:01,848 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumck2l7b6)
+2026-04-07 18:00:01,848 Result is kept for 600 seconds
+2026-04-07 18:00:01,857 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.flush', 'scheduled_job_type': 'cum2pc5alg'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cum2pc5alg)
+2026-04-07 18:00:02,079 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.flush', 'scheduled_job_type': 'cum2pc5alg'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.214927s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:02,079 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cum2pc5alg)
+2026-04-07 18:00:02,079 Result is kept for 600 seconds
+2026-04-07 18:00:02,085 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.utils.telemetry.pulse.client.send_queued_events', 'sch..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumvsiopgg)
+2026-04-07 18:00:02,308 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.utils.telemetry.pulse.client.send_queued_events', 'sch..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.215719s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:02,308 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumvsiopgg)
+2026-04-07 18:00:02,309 Result is kept for 600 seconds
+2026-04-07 18:00:02,314 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.model.utils.link_count.update_link_count', 'scheduled_..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumifbjn68)
+2026-04-07 18:00:02,529 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.model.utils.link_count.update_link_count', 'scheduled_..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.208899s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:02,529 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumifbjn68)
+2026-04-07 18:00:02,529 Result is kept for 600 seconds
+2026-04-07 18:00:02,535 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.email_account.email_account.pull', 'sche..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumo9hfd7a)
+2026-04-07 18:00:02,769 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.email_account.email_account.pull', 'sche..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.228125s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:02,769 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumo9hfd7a)
+2026-04-07 18:00:02,769 Result is kept for 600 seconds
+2026-04-07 18:00:02,774 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.utils.global_search.sync_global_search', 'scheduled_jo..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumfs4l5ha)
+2026-04-07 18:00:03,012 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.utils.global_search.sync_global_search', 'scheduled_jo..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.231693s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:03,012 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumfs4l5ha)
+2026-04-07 18:00:03,012 Result is kept for 600 seconds
+2026-04-07 18:00:03,021 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.notification.notification.trigger_offset..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cum7qq8g7s)
+2026-04-07 18:00:03,228 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.notification.notification.trigger_offset..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.200410s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:03,228 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cum7qq8g7s)
+2026-04-07 18:00:03,228 Result is kept for 600 seconds
+2026-04-07 18:00:03,235 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.automation.doctype.reminder.reminder.send_reminders', ..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cummkaiu4n)
+2026-04-07 18:00:03,435 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.automation.doctype.reminder.reminder.send_reminders', ..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.193911s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:03,435 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cummkaiu4n)
+2026-04-07 18:00:03,435 Result is kept for 600 seconds
+2026-04-07 18:00:03,440 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.search.sqlite_search.build_index_if_not_exists', 'sche..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumbe8pgtg)
+2026-04-07 18:00:03,624 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.search.sqlite_search.build_index_if_not_exists', 'sche..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.176418s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:03,624 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumbe8pgtg)
+2026-04-07 18:00:03,624 Result is kept for 600 seconds
+2026-04-07 18:00:03,629 home-cobra-frappe-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.desk.utils.delete_old_exported_report_files', 'schedul..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cum0lv1rlj)
+2026-04-07 18:00:03,975 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.desk.utils.delete_old_exported_report_files', 'schedul..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.340725s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:03,975 home-cobra-frappe-bench:long: Job OK (local.com||scheduled_job||cum0lv1rlj)
+2026-04-07 18:00:03,975 Result is kept for 600 seconds
+2026-04-07 18:00:03,982 home-cobra-frappe-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.core.doctype.prepared_report.prepared_report.expire_st..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cum9m5bi6e)
+2026-04-07 18:00:04,228 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.core.doctype.prepared_report.prepared_report.expire_st..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.240569s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:04,228 home-cobra-frappe-bench:long: Job OK (local.com||scheduled_job||cum9m5bi6e)
+2026-04-07 18:00:04,228 Result is kept for 600 seconds
+2026-04-07 18:00:04,236 home-cobra-frappe-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.website.doctype.personal_data_deletion_request.persona..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumh5mre34)
+2026-04-07 18:00:04,449 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.website.doctype.personal_data_deletion_request.persona..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.207136s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:04,449 home-cobra-frappe-bench:long: Job OK (local.com||scheduled_job||cumh5mre34)
+2026-04-07 18:00:04,449 Result is kept for 600 seconds
+2026-04-07 18:00:04,454 home-cobra-frappe-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.twofactor.delete_all_barcodes_for_users', 'scheduled_j..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cuma4bnmd0)
+2026-04-07 18:00:04,658 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.twofactor.delete_all_barcodes_for_users', 'scheduled_j..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.199631s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:04,658 home-cobra-frappe-bench:long: Job OK (local.com||scheduled_job||cuma4bnmd0)
+2026-04-07 18:00:04,658 Result is kept for 600 seconds
+2026-04-07 18:00:04,664 home-cobra-frappe-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.model.utils.user_settings.sync_user_settings', 'schedu..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cum4r420ta)
+2026-04-07 18:00:04,861 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.model.utils.user_settings.sync_user_settings', 'schedu..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.191940s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:04,861 home-cobra-frappe-bench:long: Job OK (local.com||scheduled_job||cum4r420ta)
+2026-04-07 18:00:04,861 Result is kept for 600 seconds
+2026-04-07 18:00:04,866 home-cobra-frappe-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.oauth.delete_oauth2_data', 'scheduled_job_type': 'cumn..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumna2l99a)
+2026-04-07 18:00:05,088 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.oauth.delete_oauth2_data', 'scheduled_job_type': 'cumn..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.217288s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:05,088 home-cobra-frappe-bench:long: Job OK (local.com||scheduled_job||cumna2l99a)
+2026-04-07 18:00:05,088 Result is kept for 600 seconds
+2026-04-07 18:00:05,093 home-cobra-frappe-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.desk.form.document_follow.send_hourly_updates', 'sched..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumsteev96)
+2026-04-07 18:00:05,295 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.desk.form.document_follow.send_hourly_updates', 'sched..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.196996s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:05,295 home-cobra-frappe-bench:long: Job OK (local.com||scheduled_job||cumsteev96)
+2026-04-07 18:00:05,295 Result is kept for 600 seconds
+2026-04-07 18:00:05,303 home-cobra-frappe-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.website.doctype.web_page.web_page.check_publish_status..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cum506srtq)
+2026-04-07 18:00:05,549 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.website.doctype.web_page.web_page.check_publish_status..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.240701s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:05,549 home-cobra-frappe-bench:long: Job OK (local.com||scheduled_job||cum506srtq)
+2026-04-07 18:00:05,549 Result is kept for 600 seconds
+2026-04-07 18:00:05,555 home-cobra-frappe-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.desk.page.backups.backups.delete_downloadable_backups'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumgn0inek)
+2026-04-07 18:00:05,756 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.desk.page.backups.backups.delete_downloadable_backups'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.196213s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:00:05,757 home-cobra-frappe-bench:long: Job OK (local.com||scheduled_job||cumgn0inek)
+2026-04-07 18:00:05,757 Result is kept for 600 seconds
+2026-04-07 18:04:00,625 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.integrations.doctype.google_calendar.google_calendar.s..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumck2l7b6)
+2026-04-07 18:04:00,913 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.integrations.doctype.google_calendar.google_calendar.s..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.282550s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:04:00,913 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumck2l7b6)
+2026-04-07 18:04:00,913 Result is kept for 600 seconds
+2026-04-07 18:04:00,918 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.retry_sending_emails', 'scheduled_job_type..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumudmhvrg)
+2026-04-07 18:04:01,068 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.retry_sending_emails', 'scheduled_job_type..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.144922s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:04:01,068 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumudmhvrg)
+2026-04-07 18:04:01,068 Result is kept for 600 seconds
+2026-04-07 18:04:01,073 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.monitor.flush', 'scheduled_job_type': 'cumdmuu656'}, method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumdmuu656)
+2026-04-07 18:04:01,222 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.monitor.flush', 'scheduled_job_type': 'cumdmuu656'}, method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.144511s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:04:01,222 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumdmuu656)
+2026-04-07 18:04:01,222 Result is kept for 600 seconds
+2026-04-07 18:04:01,227 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.flush', 'scheduled_job_type': 'cum2pc5alg'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cum2pc5alg)
+2026-04-07 18:04:01,384 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.flush', 'scheduled_job_type': 'cum2pc5alg'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.152393s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:04:01,384 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cum2pc5alg)
+2026-04-07 18:04:01,384 Result is kept for 600 seconds
+2026-04-07 18:08:00,637 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.monitor.flush', 'scheduled_job_type': 'cumdmuu656'}, method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumdmuu656)
+2026-04-07 18:08:00,804 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.monitor.flush', 'scheduled_job_type': 'cumdmuu656'}, method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.161080s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:08:00,804 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumdmuu656)
+2026-04-07 18:08:00,804 Result is kept for 600 seconds
+2026-04-07 18:08:00,809 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.flush', 'scheduled_job_type': 'cum2pc5alg'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cum2pc5alg)
+2026-04-07 18:08:00,966 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.flush', 'scheduled_job_type': 'cum2pc5alg'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.152003s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:08:00,966 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cum2pc5alg)
+2026-04-07 18:08:00,966 Result is kept for 600 seconds
+2026-04-07 18:08:00,970 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.notification.notification.trigger_offset..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cum7qq8g7s)
+2026-04-07 18:08:01,123 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.notification.notification.trigger_offset..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.147950s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:08:01,123 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cum7qq8g7s)
+2026-04-07 18:08:01,123 Result is kept for 600 seconds
+2026-04-07 18:08:01,128 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.integrations.doctype.google_calendar.google_calendar.s..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumck2l7b6)
+2026-04-07 18:08:01,408 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.integrations.doctype.google_calendar.google_calendar.s..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.275395s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:08:01,408 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumck2l7b6)
+2026-04-07 18:08:01,408 Result is kept for 600 seconds
+2026-04-07 18:08:01,414 home-cobra-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.retry_sending_emails', 'scheduled_job_type..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') (local.com||scheduled_job||cumudmhvrg)
+2026-04-07 18:08:01,563 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.retry_sending_emails', 'scheduled_job_type..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='local.com', user='Administrator') job in 0:00:00.144096s on worker 84e83426e6d841f28e717dfb64b1d5ce
+2026-04-07 18:08:01,563 home-cobra-frappe-bench:default: Job OK (local.com||scheduled_job||cumudmhvrg)
+2026-04-07 18:08:01,563 Result is kept for 600 seconds
+2026-04-07 18:10:33,088 Worker 84e83426e6d841f28e717dfb64b1d5ce [PID 32517]: warm shut down requested
+Traceback (most recent call last):
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/connection.py", line 1133, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/_parsers/hiredis.py", line 163, in read_response
+    self.read_from_socket()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/_parsers/hiredis.py", line 110, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cobra/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/cobra/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/cobra/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 353, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/rq/worker.py", line 631, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/rq/worker.py", line 1150, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/rq/worker.py", line 885, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/client.py", line 1687, in execute
+    conn = self.connection_pool.get_connection()
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/connection.py", line 2603, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/connection.py", line 869, in connect_check_health
+    self.on_connect_check_health(check_health=check_health)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/connection.py", line 994, in on_connect_check_health
+    self.read_response()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/cobra/frappe-bench/env/lib/python3.14/site-packages/redis/connection.py", line 1141, in read_response
+    raise ConnectionError(f"Error while reading from {host_error} : {e.args}")
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000 : (104, 'Connection reset by peer')
+
+Error while reading from 127.0.0.1:11000 : (104, 'Connection reset by peer')

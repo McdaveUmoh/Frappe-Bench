@@ -1,0 +1,12 @@
+set -o pipefail; /usr/bin/mariadb-dump --user=_88e2b32b2bd0c407 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _88e2b32b2bd0c407 | /usr/bin/gzip >> ./irfan.cabs/private/backups/20260407_180001-irfan_cabs-database.sql.gz
+
+Backup Summary for irfan.cabs at 2026-04-07 18:00:02.055644
+Config  : /home/cobra/frappe-bench/sites/irfan.cabs/private/backups/20260407_180001-irfan_cabs-site_config_backup.json 127.0B
+Database: /home/cobra/frappe-bench/sites/irfan.cabs/private/backups/20260407_180001-irfan_cabs-database.sql.gz 235.8KiB
+Backup for Site irfan.cabs has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_babb2553c046d065 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _babb2553c046d065 | /usr/bin/gzip >> ./local.com/private/backups/20260407_180002-local_com-database.sql.gz
+
+Backup Summary for local.com at 2026-04-07 18:00:03.311298
+Config  : /home/cobra/frappe-bench/sites/local.com/private/backups/20260407_180002-local_com-site_config_backup.json 127.0B
+Database: /home/cobra/frappe-bench/sites/local.com/private/backups/20260407_180002-local_com-database.sql.gz 889.1KiB
+Backup for Site local.com has been successfully completed

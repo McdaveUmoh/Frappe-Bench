@@ -1,0 +1,64 @@
+2026-04-07 13:24:12,233 DEBUG cd frappe-bench && uv venv env --seed --python python3.14
+2026-04-07 13:24:16,464 LOG Getting frappe
+2026-04-07 13:24:16,464 DEBUG cd frappe-bench/apps && git clone https://github.com/frappe/frappe.git --branch version-16 --depth 1 --origin upstream
+2026-04-07 13:24:35,164 LOG Installing frappe
+2026-04-07 13:24:35,166 DEBUG cd /home/cobra/frappe-bench && uv pip install --quiet --upgrade -e /home/cobra/frappe-bench/apps/frappe  --python /home/cobra/frappe-bench/env/bin/python
+2026-04-07 13:25:07,743 DEBUG cd /home/cobra/frappe-bench/apps/frappe && yarn install --check-files
+2026-04-07 13:25:26,545 DEBUG cd frappe-bench && bench build
+2026-04-07 13:25:26,642 INFO /usr/local/bin/bench build
+2026-04-07 13:25:38,533 LOG setting up backups
+2026-04-07 13:25:38,542 LOG backups were set up
+2026-04-07 13:25:38,542 INFO Bench frappe-bench initialized
+2026-04-07 13:25:57,289 INFO /usr/local/bin/bench start
+2026-04-07 13:25:57,459 INFO /usr/local/bin/bench watch
+2026-04-07 13:25:57,460 INFO /usr/local/bin/bench schedule
+2026-04-07 13:25:57,461 INFO /usr/local/bin/bench worker
+2026-04-07 13:25:57,503 INFO /usr/local/bin/bench serve --port 8000
+2026-04-07 13:26:54,567 INFO /usr/local/bin/bench new-site local.com
+2026-04-07 13:27:40,110 INFO /usr/local/bin/bench new-site local.com
+2026-04-07 13:28:22,764 INFO /usr/local/bin/bench use local.com
+2026-04-07 13:28:40,326 INFO /usr/local/bin/bench get-app erpnext --branch version-16
+2026-04-07 13:28:41,349 LOG Getting erpnext
+2026-04-07 13:28:41,350 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext.git --branch version-16 --depth 1 --origin upstream
+2026-04-07 13:28:48,347 LOG Installing erpnext
+2026-04-07 13:28:48,347 DEBUG cd /home/cobra/frappe-bench && uv pip install --quiet --upgrade -e /home/cobra/frappe-bench/apps/erpnext  --python /home/cobra/frappe-bench/env/bin/python
+2026-04-07 13:28:55,498 DEBUG cd /home/cobra/frappe-bench/apps/erpnext && yarn install --check-files
+2026-04-07 13:28:56,793 DEBUG bench build --app erpnext
+2026-04-07 13:28:56,878 INFO /usr/local/bin/bench build --app erpnext
+2026-04-07 13:29:25,844 INFO /usr/local/bin/bench install-app erpnext
+2026-04-07 13:31:06,851 INFO /usr/local/bin/bench start
+2026-04-07 13:31:07,030 INFO /usr/local/bin/bench serve --port 8000
+2026-04-07 13:31:07,044 INFO /usr/local/bin/bench schedule
+2026-04-07 13:31:07,046 INFO /usr/local/bin/bench watch
+2026-04-07 13:31:07,046 INFO /usr/local/bin/bench worker
+2026-04-07 13:31:33,226 INFO /usr/local/bin/bench install-app erpnext
+2026-04-07 17:29:51,922 INFO /usr/local/bin/bench start
+2026-04-07 17:29:52,160 INFO /usr/local/bin/bench watch
+2026-04-07 17:29:52,179 INFO /usr/local/bin/bench worker
+2026-04-07 17:29:52,210 INFO /usr/local/bin/bench serve --port 8000
+2026-04-07 17:29:52,219 INFO /usr/local/bin/bench schedule
+2026-04-07 17:39:22,988 INFO /usr/local/bin/bench new-site irfan.cabs
+2026-04-07 17:40:42,723 INFO /usr/local/bin/bench start
+2026-04-07 17:40:42,952 INFO /usr/local/bin/bench watch
+2026-04-07 17:40:42,992 INFO /usr/local/bin/bench worker
+2026-04-07 17:40:42,996 INFO /usr/local/bin/bench serve --port 8000
+2026-04-07 17:40:43,005 INFO /usr/local/bin/bench schedule
+2026-04-07 17:42:51,155 INFO /usr/local/bin/bench use irfan.cabs
+2026-04-07 17:43:15,422 INFO /usr/local/bin/bench start
+2026-04-07 17:43:15,633 INFO /usr/local/bin/bench serve --port 8000
+2026-04-07 17:43:15,653 INFO /usr/local/bin/bench schedule
+2026-04-07 17:43:15,676 INFO /usr/local/bin/bench watch
+2026-04-07 17:43:15,676 INFO /usr/local/bin/bench worker
+2026-04-07 17:46:01,328 INFO /usr/local/bin/bench start
+2026-04-07 17:46:01,551 INFO /usr/local/bin/bench schedule
+2026-04-07 17:46:01,555 INFO /usr/local/bin/bench worker
+2026-04-07 17:46:01,585 INFO /usr/local/bin/bench watch
+2026-04-07 17:46:01,599 INFO /usr/local/bin/bench serve --port 8000
+2026-04-07 17:46:56,349 INFO /usr/local/bin/bench --site irfan.cabs add-to-hosts
+2026-04-07 17:47:24,832 INFO /usr/local/bin/bench --site local.com add-to-hosts
+2026-04-07 17:47:43,163 INFO /usr/local/bin/bench start
+2026-04-07 17:47:43,348 INFO /usr/local/bin/bench schedule
+2026-04-07 17:47:43,387 INFO /usr/local/bin/bench serve --port 8000
+2026-04-07 17:47:43,387 INFO /usr/local/bin/bench worker
+2026-04-07 17:47:43,399 INFO /usr/local/bin/bench watch
+2026-04-07 18:00:01,210 INFO /usr/local/bin/bench --verbose --site all backup
