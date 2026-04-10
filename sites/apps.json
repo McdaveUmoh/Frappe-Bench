@@ -17,5 +17,15 @@
         "required": [],
         "idx": 2,
         "version": "16.12.0"
+    },
+    "rentals": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "af3dc614b9ff6f4056a7156c2cb123e9371c517f",
+            "branch": "master"
+        },
+        "required": [],
+        "idx": 3,
+        "version": "0.0.1"
     }
 }

@@ -62,3 +62,39 @@
 2026-04-07 17:47:43,387 INFO /usr/local/bin/bench worker
 2026-04-07 17:47:43,399 INFO /usr/local/bin/bench watch
 2026-04-07 18:00:01,210 INFO /usr/local/bin/bench --verbose --site all backup
+2026-04-09 17:57:09,464 INFO /usr/local/bin/bench start
+2026-04-09 17:57:09,665 INFO /usr/local/bin/bench schedule
+2026-04-09 17:57:09,669 INFO /usr/local/bin/bench watch
+2026-04-09 17:57:09,672 INFO /usr/local/bin/bench worker
+2026-04-09 17:57:09,679 INFO /usr/local/bin/bench serve --port 8000
+2026-04-09 18:00:01,635 INFO /usr/local/bin/bench --verbose --site all backup
+2026-04-10 16:49:21,161 INFO /usr/local/bin/bench start
+2026-04-10 16:49:21,365 INFO /usr/local/bin/bench serve --port 8000
+2026-04-10 16:49:21,375 INFO /usr/local/bin/bench schedule
+2026-04-10 16:49:21,412 INFO /usr/local/bin/bench watch
+2026-04-10 16:49:21,422 INFO /usr/local/bin/bench worker
+2026-04-10 18:46:55,331 INFO /usr/local/bin/bench new-app rentals
+2026-04-10 18:46:55,336 LOG creating new app rentals
+2026-04-10 18:47:38,464 LOG Installing rentals
+2026-04-10 18:47:38,464 DEBUG cd /home/cobra/frappe-bench && uv pip install --quiet --upgrade -e /home/cobra/frappe-bench/apps/rentals  --python /home/cobra/frappe-bench/env/bin/python
+2026-04-10 18:47:39,475 DEBUG bench build --app rentals
+2026-04-10 18:47:39,563 INFO /usr/local/bin/bench build --app rentals
+2026-04-10 18:48:51,854 INFO /usr/local/bin/bench --site irfan.cabs install-app rentals
+2026-04-10 18:49:30,015 INFO /usr/local/bin/bench start
+2026-04-10 18:49:30,219 INFO /usr/local/bin/bench worker
+2026-04-10 18:49:30,226 INFO /usr/local/bin/bench serve --port 8000
+2026-04-10 18:49:30,232 INFO /usr/local/bin/bench watch
+2026-04-10 18:49:30,267 INFO /usr/local/bin/bench schedule
+2026-04-10 19:17:44,469 INFO /usr/local/bin/bench --site irfan.cabs set-config developer-mode 1
+2026-04-10 19:19:50,384 INFO /usr/local/bin/bench start
+2026-04-10 19:19:50,592 INFO /usr/local/bin/bench schedule
+2026-04-10 19:19:50,615 INFO /usr/local/bin/bench watch
+2026-04-10 19:19:50,623 INFO /usr/local/bin/bench serve --port 8000
+2026-04-10 19:19:50,623 INFO /usr/local/bin/bench worker
+2026-04-10 19:23:29,093 INFO /usr/local/bin/bench start
+2026-04-10 19:23:29,289 INFO /usr/local/bin/bench schedule
+2026-04-10 19:23:29,323 INFO /usr/local/bin/bench worker
+2026-04-10 19:23:29,323 INFO /usr/local/bin/bench watch
+2026-04-10 19:23:29,325 INFO /usr/local/bin/bench serve --port 8000
+2026-04-10 19:29:06,696 INFO /usr/local/bin/bench --site irfan.cabs set-config developer_mode 1
+2026-04-10 19:30:47,295 INFO /usr/local/bin/bench --site irfan.cabs migrate
