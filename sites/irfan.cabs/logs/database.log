@@ -2808,3 +2808,5 @@ create sequence if not exists vehicle_id_seq nocache nocycle
 ALTER TABLE `tabVehicle` MODIFY `name` bigint
 2026-04-10 19:55:10,353 WARNING database DDL Query made to DB:
 ALTER TABLE `tabVehicle` ADD COLUMN `make` varchar(140), ADD COLUMN `license_plate` varchar(140), ADD COLUMN `color` varchar(140), ADD COLUMN `model` varchar(140), ADD COLUMN `vehicle_year` int(11) NOT NULL DEFAULT 0
+2026-04-14 17:33:59,118 WARNING database DDL Query made to DB:
+ALTER TABLE `tabDriver` ADD COLUMN `full_name` varchar(140)

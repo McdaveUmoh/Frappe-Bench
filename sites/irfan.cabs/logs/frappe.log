@@ -10,3 +10,9 @@ Form Dict: {'docs': '{"name":"Customize Form","owner":"umohmcdave@gmail.com","do
 2026-04-10 19:34:59,313 ERROR frappe New Exception collected in error log
 Site: irfan.cabs
 Form Dict: {'doctype': 'User', 'name': 'Administrator', 'cmd': 'frappe.desk.form.load.getdoc'}
+2026-04-14 16:15:13,101 ERROR frappe New Exception collected in error log
+Site: irfan.cabs
+Form Dict: {}
+2026-04-14 17:41:28,678 ERROR frappe New Exception collected in error log
+Site: irfan.cabs
+Form Dict: {'first_name': 'Tunde', 'last_name': 'Blode', 'license_number': 'KFH35253'}
