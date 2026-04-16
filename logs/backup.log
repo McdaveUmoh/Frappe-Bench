@@ -52,3 +52,57 @@ Backup Summary for local.com at 2026-04-13 18:00:03.609093
 Config  : /home/cobra/frappe-bench/sites/local.com/private/backups/20260413_180002-local_com-site_config_backup.json 127.0B
 Database: /home/cobra/frappe-bench/sites/local.com/private/backups/20260413_180002-local_com-database.sql.gz 892.8KiB
 Backup for Site local.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_88e2b32b2bd0c407 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _88e2b32b2bd0c407 | /usr/bin/gzip >> ./irfan.cabs/private/backups/20260415_180002-irfan_cabs-database.sql.gz
+
+Backup Summary for irfan.cabs at 2026-04-15 18:00:02.879147
+Config  : /home/cobra/frappe-bench/sites/irfan.cabs/private/backups/20260415_180002-irfan_cabs-site_config_backup.json 216.0B
+Database: /home/cobra/frappe-bench/sites/irfan.cabs/private/backups/20260415_180002-irfan_cabs-database.sql.gz 269.8KiB
+Backup for Site irfan.cabs has been successfully completed
+File ./local.com/private/backups/20260413_120002-local_com-site_config_backup.json is recent
+File ./local.com/private/backups/20260413_180002-local_com-database.sql.gz is recent
+File ./local.com/private/backups/20260413_120002-local_com-database.sql.gz is recent
+File ./local.com/private/backups/20260413_180002-local_com-site_config_backup.json is recent
+set -o pipefail; /usr/bin/mariadb-dump --user=_babb2553c046d065 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _babb2553c046d065 | /usr/bin/gzip >> ./local.com/private/backups/20260415_180002-local_com-database.sql.gz
+
+Backup Summary for local.com at 2026-04-15 18:00:04.154851
+Config  : /home/cobra/frappe-bench/sites/local.com/private/backups/20260415_180002-local_com-site_config_backup.json 127.0B
+Database: /home/cobra/frappe-bench/sites/local.com/private/backups/20260415_180002-local_com-database.sql.gz 894.4KiB
+Backup for Site local.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_88e2b32b2bd0c407 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _88e2b32b2bd0c407 | /usr/bin/gzip >> ./irfan.cabs/private/backups/20260416_120002-irfan_cabs-database.sql.gz
+
+Backup Summary for irfan.cabs at 2026-04-16 12:00:02.593400
+Config  : /home/cobra/frappe-bench/sites/irfan.cabs/private/backups/20260416_120002-irfan_cabs-site_config_backup.json 216.0B
+Database: /home/cobra/frappe-bench/sites/irfan.cabs/private/backups/20260416_120002-irfan_cabs-database.sql.gz 270.1KiB
+Backup for Site irfan.cabs has been successfully completed
+File ./local.com/private/backups/20260413_120002-local_com-site_config_backup.json is recent
+File ./local.com/private/backups/20260415_180002-local_com-database.sql.gz is recent
+File ./local.com/private/backups/20260415_180002-local_com-site_config_backup.json is recent
+File ./local.com/private/backups/20260413_180002-local_com-database.sql.gz is recent
+File ./local.com/private/backups/20260413_120002-local_com-database.sql.gz is recent
+File ./local.com/private/backups/20260413_180002-local_com-site_config_backup.json is recent
+set -o pipefail; /usr/bin/mariadb-dump --user=_babb2553c046d065 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _babb2553c046d065 | /usr/bin/gzip >> ./local.com/private/backups/20260416_120002-local_com-database.sql.gz
+
+Backup Summary for local.com at 2026-04-16 12:00:03.390516
+Config  : /home/cobra/frappe-bench/sites/local.com/private/backups/20260416_120002-local_com-site_config_backup.json 127.0B
+Database: /home/cobra/frappe-bench/sites/local.com/private/backups/20260416_120002-local_com-database.sql.gz 894.6KiB
+Backup for Site local.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_88e2b32b2bd0c407 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _88e2b32b2bd0c407 | /usr/bin/gzip >> ./irfan.cabs/private/backups/20260416_180002-irfan_cabs-database.sql.gz
+
+Backup Summary for irfan.cabs at 2026-04-16 18:00:02.671111
+Config  : /home/cobra/frappe-bench/sites/irfan.cabs/private/backups/20260416_180002-irfan_cabs-site_config_backup.json 216.0B
+Database: /home/cobra/frappe-bench/sites/irfan.cabs/private/backups/20260416_180002-irfan_cabs-database.sql.gz 270.1KiB
+Backup for Site irfan.cabs has been successfully completed
+File ./local.com/private/backups/20260413_120002-local_com-site_config_backup.json is older than 24 hours
+File ./local.com/private/backups/20260415_180002-local_com-database.sql.gz is recent
+File ./local.com/private/backups/20260416_120002-local_com-database.sql.gz is recent
+File ./local.com/private/backups/20260415_180002-local_com-site_config_backup.json is recent
+File ./local.com/private/backups/20260413_180002-local_com-database.sql.gz is older than 24 hours
+File ./local.com/private/backups/20260413_120002-local_com-database.sql.gz is older than 24 hours
+File ./local.com/private/backups/20260413_180002-local_com-site_config_backup.json is older than 24 hours
+File ./local.com/private/backups/20260416_120002-local_com-site_config_backup.json is recent
+set -o pipefail; /usr/bin/mariadb-dump --user=_babb2553c046d065 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _babb2553c046d065 | /usr/bin/gzip >> ./local.com/private/backups/20260416_180002-local_com-database.sql.gz
+
+Backup Summary for local.com at 2026-04-16 18:00:03.253820
+Config  : /home/cobra/frappe-bench/sites/local.com/private/backups/20260416_180002-local_com-site_config_backup.json 127.0B
+Database: /home/cobra/frappe-bench/sites/local.com/private/backups/20260416_180002-local_com-database.sql.gz 894.6KiB
+Backup for Site local.com has been successfully completed
