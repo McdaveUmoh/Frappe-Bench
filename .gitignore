@@ -1,0 +1,10 @@
+# In frappe-bench/.gitignore
+sites/*/site_config.json
+sites/common_site_config.json
+sites/*/.site_config.json.bak
+
+# node/python artifacts
+node_modules/
+*.pyc
+__pycache__/
+.env
