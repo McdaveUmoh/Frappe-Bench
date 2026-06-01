@@ -1,0 +1,27 @@
+2026-04-27 16:50:26,748 INFO ipython === bench console session ===
+2026-04-27 16:50:26,748 INFO ipython ride = frappe.get_doc("Ride Booking", "5l59biecd2")
+2026-04-27 16:50:26,748 INFO ipython ride.vehicel
+2026-04-27 16:50:26,748 INFO ipython ride.vehicle
+2026-04-27 16:50:26,748 INFO ipython ride.order
+2026-04-27 16:50:26,748 INFO ipython ride.items
+2026-04-27 16:50:26,748 INFO ipython for item in ride.items:
+    print(item.source, item.destination, item.distance)
+    
+2026-04-27 16:50:26,748 INFO ipython for item in ride.items:
+    print(total =+ item.distance)
+    
+2026-04-27 16:50:26,748 INFO ipython for item in ride.items:
+    total =+ item.distance
+    print(total)
+    
+2026-04-27 16:50:26,748 INFO ipython for item in ride.items:
+    total += item.distance
+    print(total)
+    
+2026-04-27 16:50:26,748 INFO ipython for item in ride.items:
+    total = 0
+    total += item.distance
+    print(total)
+    
+2026-04-27 16:50:26,748 INFO ipython excit
+2026-04-27 16:50:26,748 INFO ipython === session end ===
