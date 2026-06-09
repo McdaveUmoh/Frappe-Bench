@@ -2913,3 +2913,5 @@ ALTER TABLE `tabVehicle` ADD COLUMN `status` varchar(140)
 ALTER TABLE `tabVehicle` ADD COLUMN `condition` decimal(3,2)
 2026-05-22 14:48:57,093 WARNING database DDL Query made to DB:
 ALTER TABLE `tabVehicle` ADD COLUMN `summary` longtext
+2026-06-09 17:12:57,992 WARNING database DDL Query made to DB:
+ALTER TABLE `tabVehicle` ADD COLUMN `audit_completed` tinyint(4) NOT NULL DEFAULT 0

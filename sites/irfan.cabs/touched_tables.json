@@ -1,11 +1,20 @@
 [
-    "tabSingles",
+    "tabTag",
+    "tabTag Link",
+    "tabWebsite Theme",
     "tabInstalled",
     "tabWebsite Theme Ignore App",
-    "tabNavbar Item",
-    "tabWebsite",
     "tabInstalled Application",
-    "tabNavbar",
-    "tabWebsite Theme",
-    "tabVersion"
+    "tabDocType Action",
+    "tabDocType",
+    "tabDocType Link",
+    "tabVersion",
+    "tabWebsite",
+    "tabDocField",
+    "tabSingles",
+    "tabRole",
+    "tabNavbar Item",
+    "tabDocPerm",
+    "tabDocType State",
+    "tabNavbar"
 ]
